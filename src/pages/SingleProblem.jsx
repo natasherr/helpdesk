@@ -192,8 +192,8 @@ const SingleProblem = () => {
                                 )}
                             </div>
                         ) : (
-                            <div className="text-center py-16">
-                                <p className="text-gray-500 text-2xl">Problem not found</p>
+                            <div className="text-center py-16 bg-gray-50 rounded-lg shadow-sm">
+                                <p className="text-gray-500 text-2xl font-semibold ">Loading problem...</p>
                             </div>
                         )}
                     </div>
