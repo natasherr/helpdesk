@@ -17,18 +17,18 @@ const Problems = () => {
   };
 
   return (
-    <div>
-      <div className="bg-gray-200 px-2 py-10">
+    <div className="bg-gray-900 min-h-screen">
+      <div className="px-2 py-10">
         <div id="features" className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="text-center font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
             Problems
           </h2>
           {problem.length > 0 ? (
-            <ul className="mt-16 flex flex-wrap justify-between gap-6 text-center text-slate-700">
+            <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center text-white">
               {problem.map((problems) => (
                 <li
                   key={problems.id}
-                  className="rounded-xl bg-white px-6 py-8 shadow-sm w-[30%] mb-6 border border-gray-300"
+                  className="rounded-xl bg-gray-800 px-6 py-8 shadow-sm border border-gray-700 flex flex-col"
                 >
                   <img
                     src="https://www.svgrepo.com/show/530438/ddos-protection.svg"
@@ -36,11 +36,11 @@ const Problems = () => {
                     className="mx-auto h-10 w-10"
                   />
                   <Link to={`/singleproblem/${problems.id}`}>
-                    <h3 className="my-3 font-display font-medium text-lg border-b pb-2 border-gray-400">
+                    <h3 className="my-3 font-display font-medium text-lg border-b pb-2 border-gray-600 text-white">
                       Problem:
                     </h3>
                   </Link>
-                  <p className="mb-4 text-gray-700 font-medium font-display">
+                  <p className="mb-4 text-gray-300 font-medium font-display flex-grow">
                     {problems.description}
                   </p>
 
@@ -54,15 +54,15 @@ const Problems = () => {
                   )}
 
                   {/* Display solutions */}
-                  <h4 className="mt-4 font-semibold text-md border-t pt-2 border-gray-400">
+                  <h4 className="mt-4 font-semibold text-md border-t pt-2 border-gray-600 text-white">
                     Solutions:
                   </h4>
                   {problems.solutions.length > 0 ? (
-                    <ul className="mt-1.5 text-sm leading-6 text-secondary-500">
+                    <ul className="mt-1.5 text-sm leading-6 text-gray-300">
                       {problems.solutions.map((sol) => (
                         <li
                           key={sol.id}
-                          className="border-t border-gray-300 pt-2 mt-2"
+                          className="border-t border-gray-600 pt-2 mt-2"
                         >
                           {sol.description}
                           {sol.tag && (
@@ -74,7 +74,7 @@ const Problems = () => {
                       ))}
                     </ul>
                   ) : (
-                    <p className="mt-1.5 text-sm leading-6 text-secondary-500">
+                    <p className="mt-1.5 text-sm leading-6 text-gray-300">
                       No solutions yet
                     </p>
                   )}
@@ -83,15 +83,15 @@ const Problems = () => {
             </ul>
           ) : (
             <div className="min-h-[calc(100vh-200px)] flex items-center justify-center">
-              <div className="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 space-y-6">
+              <div className="w-full max-w-4xl bg-gray-800 rounded-xl shadow-lg p-8 space-y-6">
                 <div className="text-center">
                   <div className="flex justify-center mb-4">
-                    <FaLock className="text-gray-700 dark:text-gray-300 text-4xl" aria-hidden="true" />
+                    <FaLock className="text-gray-300 text-4xl" aria-hidden="true" />
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h1 className="text-3xl font-bold text-white mb-2">
                     Login Required
                   </h1>
-                  <p className="text-gray-600 dark:text-gray-400 text-lg">
+                  <p className="text-gray-400 text-lg">
                     Please log in to access any of the problems.
                   </p>
                 </div>
